@@ -17,4 +17,9 @@ function getComputerChoice(){
     return computerChoice;
 }
 
+function singleRound(  playerChoice, computerChoice){
 
+}
+
+let playerSelection = "";
+singleRound( playerSelection = prompt("Player Choice") ,getComputerChoice() );
