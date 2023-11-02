@@ -53,5 +53,11 @@ function singleRound(  playerChoice, computerChoice){
     return result;
 }
 
-let playerSelection = "";
-console.log(singleRound( playerSelection = prompt("Player Choice") ,getComputerChoice() ));
+function game(){
+    let playerSelection = ""
+    for(let i = 0; i < 5; i++){
+        console.log(singleRound( playerSelection = prompt("Player Choice") ,getComputerChoice() ));
+    }
+}
+
+game();
