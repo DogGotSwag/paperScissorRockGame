@@ -18,35 +18,45 @@ function getComputerChoice(){
 }
 
 function singleRound(  playerChoice, computerChoice){
+    // result == 1 means user is winner
+    //  == 0 means tie
+    // == 2 means Computer winner
     playerChoice = playerChoice.toLowerCase();
-    let result = "";
+    let result = 0;
 
     if(playerChoice == computerChoice){
-        return "It's a tie"
+        console.log("It's a tie");
+        result = 0;
     }
 
     else if( playerChoice == "rock" && computerChoice == "paper"){
-        result = "You Lose! Paper beats Rock";
+        console.log("You Lose! Paper beats Rock");
+        result = 2;
     }
 
     else if( playerChoice == "rock" && computerChoice == "scissor"){
-        result = "You Win! Rock beats Scissors";
+        console.log("You Win! Rock beats Scissors");
+        result = 1;
     }
     
     else if( playerChoice == "paper" && computerChoice == "rock"){
-        result = "You Win! Paper beats Rock";
+        console.log("You Win! Paper beats Rock");
+        result = 1;
     }
 
     else if( playerChoice == "paper" && computerChoice == "scissor"){
-        result = "You Lose! Scissors beats Paper"
+        console.log("You Lose! Scissors beats Paper");
+        result = 2;
     }
 
     else if( playerChoice == "scissor" && computerChoice ==  "rock"){
-        result = "You Lose! Rock beats Scissors";
+        console.log("You Lose! Rock beats Scissors");
+        result = 2;
     }
 
     else if( playerChoice == "scissor" && computerChoice == "paper"){
-        result = "You Win! Scissors beats Paper"
+        console.log("You Win! Scissors beats Paper");
+        result = 1;
     }
 
 
