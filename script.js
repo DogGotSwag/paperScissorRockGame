@@ -64,9 +64,35 @@ function singleRound(  playerChoice, computerChoice){
 }
 
 function game(){
-    let playerSelection = ""
+    
+    let userScore = 0;
+    let computerScore = 0;
+    
     for(let i = 0; i < 5; i++){
-        console.log(singleRound( playerSelection = prompt("Player Choice") ,getComputerChoice() ));
+        let playerSelection = ""
+
+        
+
+        let resultNumber = singleRound( playerSelection = prompt("User Choice") , getComputerChoice() );
+
+        if(resultNumber == 0){
+            ;
+        }
+        else if( resultNumber == 1){
+            userScore++;
+        }
+        else{
+            computerScore++;
+        }
+    }
+    if(userScore == computerScore){
+        console.log("tie -_-");
+    }
+    else if( userScore > computerScore){
+        console.log("User is Winner of match");
+    }
+    else{
+        console.log("You Lose, Computer is Winner of the match");
     }
 }
 
