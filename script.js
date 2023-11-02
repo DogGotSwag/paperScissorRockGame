@@ -1,6 +1,6 @@
 'use strict';
 function getComputerChoice(){
-    let number = Math.floor(Math.random()*3);
+    let number = Math.floor(Math.random()*3); // 0-2
     let computerChoice = "";
 
     switch(number) {
@@ -24,7 +24,7 @@ function singleRound(  playerChoice, computerChoice){
     playerChoice = playerChoice.toLowerCase();
     let result = 0;
 
-    if(playerChoice == computerChoice){
+    if(playerChoice == computerChoice){         // run through all variations
         console.log("It's a tie");
         result = 0;
     }
@@ -59,19 +59,17 @@ function singleRound(  playerChoice, computerChoice){
         result = 1;
     }
 
-
     return result;
 }
 
 function game(){
-    
+    // declare score
     let userScore = 0;
     let computerScore = 0;
     
-    for(let i = 0; i < 5; i++){
-        let playerSelection = ""
 
-        
+    for(let i = 0; i < 5; i++){  // run loop and convert singleRound() output in to score
+        let playerSelection = ""
 
         let resultNumber = singleRound( playerSelection = prompt("User Choice") , getComputerChoice() );
 
@@ -85,6 +83,7 @@ function game(){
             computerScore++;
         }
     }
+    //  compare score to declare winner
     if(userScore == computerScore){
         console.log("tie -_-");
     }
