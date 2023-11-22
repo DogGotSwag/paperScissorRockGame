@@ -68,21 +68,7 @@ function game(){
     let computerScore = 0;
     
 
-    for(let i = 0; i < 5; i++){  // run loop and convert singleRound() output in to score
-        let playerSelection = ""
-
-        let resultNumber = singleRound( playerSelection = prompt("User Choice") , getComputerChoice() );
-
-        if(resultNumber == 0){
-            ;
-        }
-        else if( resultNumber == 1){
-            userScore++;
-        }
-        else{
-            computerScore++;
-        }
-    }
+   
     //  compare score to declare winner
     if(userScore == computerScore){
         console.log("tie -_-");
