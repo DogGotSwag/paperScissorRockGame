@@ -1,4 +1,13 @@
 'use strict';
+
+function disableButtons(){
+    let buttons = document.querySelectorAll('button');
+            for( let button of buttons ){
+                button.disabled = true;
+            }
+}
+
+
 function getComputerChoice(){
     let number = Math.floor(Math.random()*3); // 0-2
     let computerChoice = "";
@@ -66,6 +75,7 @@ function game(){
     // declare score
     let userScore = 0;
     let computerScore = 0;
+    let tieScore = 0;
 
     //event listners
 
@@ -89,15 +99,20 @@ function game(){
             result.textContent = "You Lose this round! "+targetButton.id+" loses to "+computerChoice;
         }
         else if( roundOutcome == 0){
+            tieScore++;
             result.textContent = "Tie round -_-"
         }
 
-        roundsBox.textContent = `You: ${userScore} Computer: ${computerScore}`;
+        roundsBox.textContent = `You: ${userScore} || Computer: ${computerScore} || Tie: ${tieScore}`;
 
-
-        if( userScore == 5 || computerChoice == 5){
-            roundsBox.textContent = (userScore > computerChoice) ? `You Win the game`:
-            `You lose the game`;
+        if( userScore == 5){
+            roundsBox.textContent = "You win the game!"
+            disableButtons();
+            
+        }
+        else if( computerScore == 5){
+            roundsBox.textContent = "You lose the game ):"
+            disableButtons();
         }
 
     });
