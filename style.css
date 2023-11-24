@@ -3,10 +3,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    
 }
 
 html, body{
     height: 100%;
+}
+
+.boxOfButtons, .resultBox{
+    border: 2px solid wheat;
 }
 
 

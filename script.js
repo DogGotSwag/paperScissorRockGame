@@ -73,21 +73,9 @@ function game(){
     
     container.addEventListener( 'click' , (event) => {
         let targetButton = event.target;
-        switch ( targetButton.id ) {
-            case "rockBox":
-                alert("rock");
-                break;
-
-            case "paperBox":
-                alert("paper");
-                break;
-            
-            case "scissorBox":
-                alert("scissor");
-                break;
-
-            default:
-        }
+        let result = document.querySelector( '.resultBox');
+        
+        singleRound(targetButton.id , getComputerChoice() );
 
     });
 
