@@ -12,8 +12,13 @@ html, body{
     height: 100%;
 }
 
-.boxOfButtons, .resultBox{
+ .resultBox{
     border: 2px solid wheat;
+}
+
+.resultBox{
+    color: wheat;
+    padding: 5px;
 }
 
 

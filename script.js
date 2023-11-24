@@ -75,7 +75,19 @@ function game(){
         let targetButton = event.target;
         let result = document.querySelector( '.resultBox');
         
-        singleRound(targetButton.id , getComputerChoice() );
+        let computerChoice = getComputerChoice();
+
+        let roundOutcome = singleRound(targetButton.id , computerChoice )
+        
+        if( roundOutcome == 1 ){
+            result.textContent = "You Win this round! "+targetButton.id+" beats "+computerChoice;
+        }
+        else if( roundOutcome == 2){
+            result.textContent = "You Lose this round! "+targetButton.id+" loses to "+computerChoice;
+        }
+        else if( roundOutcome == 0){
+            result.textContent = "Tie -_-"
+        }
 
     });
 
