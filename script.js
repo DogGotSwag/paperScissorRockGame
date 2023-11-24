@@ -1,7 +1,7 @@
 'use strict';
 
 function disableButtons(){
-    let buttons = document.querySelectorAll('button');
+    let buttons = document.querySelectorAll('.optionsBox');
             for( let button of buttons ){
                 button.disabled = true;
             }
