@@ -77,7 +77,20 @@ function game(){
     let computerScore = 0;
     let tieScore = 0;
 
-    //event listners
+    //reset button
+    let reset = document.querySelector('.reset');
+
+    reset.addEventListener( 'click' , () =>{
+        userScore = 0;
+        computerScore = 0;
+        tieScore = 0;
+
+        let result = document.querySelector( '.resultBox');
+        let roundsBox = document.querySelector('.roundsResults');
+
+        result.textContent = "Results of every round"
+        roundsBox.textContent = "You: 0 || Computer: 0 || Tie: 0";
+    });
 
     let container = document.querySelector('.boxOfButtons');
     
