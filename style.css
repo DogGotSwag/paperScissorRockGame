@@ -12,13 +12,11 @@ html, body{
     height: 100%;
 }
 
- .resultBox{
+ .resultBox, .roundsResults{
     border: 2px solid wheat;
-}
-
-.resultBox{
     color: wheat;
     padding: 5px;
 }
+
 
 

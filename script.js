@@ -74,34 +74,37 @@ function game(){
     container.addEventListener( 'click' , (event) => {
         let targetButton = event.target;
         let result = document.querySelector( '.resultBox');
+        let roundsBox = document.querySelector('.roundsResults');
         
         let computerChoice = getComputerChoice();
 
         let roundOutcome = singleRound(targetButton.id , computerChoice )
         
         if( roundOutcome == 1 ){
+            userScore++;
             result.textContent = "You Win this round! "+targetButton.id+" beats "+computerChoice;
         }
         else if( roundOutcome == 2){
+            computerScore++;
             result.textContent = "You Lose this round! "+targetButton.id+" loses to "+computerChoice;
         }
         else if( roundOutcome == 0){
-            result.textContent = "Tie -_-"
+            result.textContent = "Tie round -_-"
+        }
+
+        roundsBox.textContent = `You: ${userScore} Computer: ${computerScore}`;
+
+
+        if( userScore == 5 || computerChoice == 5){
+            roundsBox.textContent = (userScore > computerChoice) ? `You Win the game`:
+            `You lose the game`;
         }
 
     });
 
    
     //  compare score to declare winner
-    if(userScore == computerScore){
-        console.log("tie -_-");
-    }
-    else if( userScore > computerScore){
-        console.log("User is Winner of match");
-    }
-    else{
-        console.log("You Lose, Computer is Winner of the match");
-    }
+    
 }
 
 game();
