@@ -66,7 +66,30 @@ function game(){
     // declare score
     let userScore = 0;
     let computerScore = 0;
+
+    //event listners
+
+    let container = document.querySelector('.boxOfButtons');
     
+    container.addEventListener( 'click' , (event) => {
+        let targetButton = event.target;
+        switch ( targetButton.id ) {
+            case "rockBox":
+                alert("rock");
+                break;
+
+            case "paperBox":
+                alert("paper");
+                break;
+            
+            case "scissorBox":
+                alert("scissor");
+                break;
+
+            default:
+        }
+
+    });
 
    
     //  compare score to declare winner
