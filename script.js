@@ -7,6 +7,13 @@ function disableButtons(){
             }
 }
 
+function enableButtons(){
+    let buttons = document.querySelectorAll('.optionsBox');
+            for( let button of buttons ){
+                button.disabled = false;
+            }
+}
+
 
 function getComputerChoice(){
     let number = Math.floor(Math.random()*3); // 0-2
@@ -84,6 +91,8 @@ function game(){
         userScore = 0;
         computerScore = 0;
         tieScore = 0;
+
+        enableButtons();
 
         let result = document.querySelector( '.resultBox');
         let roundsBox = document.querySelector('.roundsResults');
